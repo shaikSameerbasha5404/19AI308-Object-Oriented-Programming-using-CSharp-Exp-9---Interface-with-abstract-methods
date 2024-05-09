@@ -32,7 +32,7 @@ Main method: creates Program object, initiates banking operations based on user 
 
 ## PROGRAM :
 
-### DEVELOPED BY : M.CHANDRU
+### DEVELOPED BY : Shaik Sameer Basha
 ### REG NO : 212222230026
 
 ```C#
