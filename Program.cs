@@ -1,38 +1,46 @@
 using System;
-
-// Define the IMario interface
-public interface IMario
+using System.Transactions;
+public interface Bank
 {
-    // Write your code here
+    void deposit();
+    void withdraw();
 }
-
-// Implement the IMario interface in the Mario class
-public class Mario : IMario
+public class Program:Bank
 {
-    public virtual void Ability()
+    public int amount,balance=100;
+    public Program()
     {
-       // Write your code here
+        Console.WriteLine("Enter your Choice:\n1.Deposit\n2.WithDraw");
+        int opt;
+        opt = Convert.ToInt32(Console.ReadLine());
+        if (opt == 1)
+            deposit();
+        else if (opt == 2)
+            withdraw();
+        else
+        {
+            Console.WriteLine("Enter a valid input");
+        }
+    }
+    public void deposit()
+    {
+        Console.WriteLine("Enter the amount to deposit");
+        amount = Convert.ToInt32(Console.ReadLine());
+        balance += amount;
+        Console.WriteLine("The Balance is " + balance);
+    }
+    public void withdraw()
+    {
+        Console.WriteLine("Enter the amount to withdraw");
+        amount = Convert.ToInt32(Console.ReadLine());
+        balance -= amount;
+        Console.WriteLine("The Balance is " + balance);
     }
 }
-
-// SuperMario class that inherits from Mario and hides the Ability() method
-public class SuperMario : Mario
+public class Exp9
 {
-    public new void Ability()
+    public static void Main(string[] args)
     {
-        // Write your code here
+        Program n = new Program();
     }
 }
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        // Create a Mario object
-        // Write your code here
-
-        // Create a SuperMario object
-        // Write your code here
-    }
-}
-
